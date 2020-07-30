@@ -1,5 +1,5 @@
 {{ define "main" }}
-<div class="container" role="main">
+<main>
     <div class="posts-list">
       {{ if .IsHome }}
         {{ $pag := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
@@ -12,7 +12,7 @@
       {{ end }}
       </div>
     {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
-    <ul class="pager">
+    <ul class="paginate">
       {{ if .Paginator.HasPrev }}
         <li class="previous">
           <a href="{{ .Permalink }}page/{{ .Paginator.Prev.PageNumber }}/">&larr; Newer</a>
@@ -25,5 +25,5 @@
       {{ end }}
     </ul>
   {{ end }}
-</div>
+  </main>
 {{ end }}

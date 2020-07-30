@@ -1,19 +1,23 @@
 {{ define "main" }}
-  <div class="container" role="main">
-    <article class="article" class="blog-post">
-      {{ partial "toc.html" . }}
-
-      {{ .Content }}
-
-      {{ partial "tags.html" . }}
-    </article>
-    {{ if and (gt .WordCount 400) (.Param "backtotop") }}
-      {{ partial "backtotop.html" . }}
-      <button onclick="topFunction()" id="backtotopButton">
-        <i class="fa fa-angle-up"></i>
-      </button>
+<main>
+  <article>
+    {{ if eq .Type "post" }}
+      {{ partial "postmeta.html" . }}
     {{ end }}
 
-    {{ template "_internal/disqus.html" . }}
-  </div>
+    {{ partial "toc.html" . }}
+
+    {{ .Content }}
+
+    {{ partial "tags.html" . }}
+  </article>
+  {{ if and (gt .WordCount 400) (.Param "backtotop") }}
+    {{ partial "backtotop.html" . }}
+    <button onclick="topFunction()" id="backtotopButton">
+      <i class="fa fa-angle-up"></i>
+    </button>
+  {{ end }}
+
+  {{ template "_internal/disqus.html" . }}
+</main>
 {{ end }}

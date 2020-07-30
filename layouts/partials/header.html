@@ -16,9 +16,6 @@
     {{ else }}
       <h1>{{ with $title }}{{.}}{{ else }}<br/>{{ end }}</h1>
     {{ end }}
-    {{ if eq .Type "post" }}
-      {{ partial "postmeta.html" . }}
-    {{ end }}
 
     {{ partial "nav.html" . }}
   </header>
