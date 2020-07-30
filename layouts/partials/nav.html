@@ -1,0 +1,13 @@
+{{/*  <nav>
+  {{ range .Site.Menus.main }}
+    <a href="{{ .url | relLangURL }}" name="{{ .name }}">{{ .name }}</a>
+  {{ end }}
+</nav>  */}}
+
+
+<!-- sidebar start -->
+<nav>
+  {{ range .Site.Menus.main }}
+  <a href="{{ .URL }}">{{ .Pre }}<span>{{ .Name }}</span></a>
+  {{ end }}
+</nav>

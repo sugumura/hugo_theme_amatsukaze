@@ -1,0 +1,9 @@
+<div class="postmeta">
+  <ion-icon name="calendar-outline"></ion-icon>{{ .Lastmod.Format ( .Site.Params.dateformat | default "Jan 2, 2006") }}
+  {{ if .Params.categories }}
+    <ion-icon name="pricetags-outline"></ion-icon>
+    {{ range .Params.categories }}
+      <a href="{{ $.Site.BaseURL }}categories/{{ . | urlize }}/" title="{{ . }}">{{ . }}</a>&nbsp;
+    {{ end }}
+  {{ end }}
+</div>
