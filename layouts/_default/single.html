@@ -1,9 +1,15 @@
+{{ define "title" }}{{ .Title }} - {{ end }}
+  
 {{ define "main" }}
 <main>
   <article>
+
     {{ if eq .Type "post" }}
-      {{ partial "postmeta.html" . }}
+      <h1>{{ .Title }}</h1>
+      {{ partial "lastmod.html" . }}
+      {{ partial "categories.html" . }}
     {{ end }}
+
 
     {{ partial "toc.html" . }}
 

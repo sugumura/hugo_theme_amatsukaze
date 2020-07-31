@@ -24,6 +24,14 @@ footer {
 	padding-right: calc(50vw - 50%);
 }
 
+.categories {
+  margin-bottom: 1rem;
+}
+
+ion-icon {
+  margin-bottom: -0.2rem;
+}
+
 .paginate {
   list-style: none;
 }

@@ -1,6 +1,8 @@
+{{ define "title" }}{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ end }}
+
 {{ define "main" }}
 <main>
-    <div class="posts-list">
+    <div class="posts">
       {{ if .IsHome }}
         {{ $pag := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
       {{ else }}
