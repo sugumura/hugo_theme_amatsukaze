@@ -1,13 +1,39 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
   <head>
-    {{- partial "head.html" . -}}
+    <meta charset="utf-8" />
+    <title>{{ block "title" . }}{{ end }}{{ .Site.Title }}</title>
+
+    {{ with .Site.Params.description }}
+    <meta name="description" content="{{ . }}" />
+    {{ end }}
+    {{- with .Site.Author.Name }}
+    <meta name="author" content="{{ . }}"/>
+    {{- end }}
+
+    {{ template "_internal/opengraph.html" . }}
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="canonical" href="{{ .Permalink }}">
+    <link rel="alternate" type="application/rss+xml" href="{{ .Site.BaseURL }}index.xml" title="{{ .Site.Title }}">
+
+    <link rel="stylesheet" href="//fonts.xz.style/serve/inter.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/app.css">
+
+    <script src="//unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+    <script src="{{ .Site.BaseURL }}js/bundle.js"></script>
+
+    {{ partial "google-analytics.html" . }}
+
   </head>
   <body>
-    {{- partial "header.html" . -}}
+    {{ partial "header.html" . }}
 
-    {{- block "main" . }}{{- end }}
+    {{ block "main" . }}{{ end }}
 
-    {{- partial "footer.html" . -}}
+    {{ partial "footer.html" . }}
     </body>
 </html>

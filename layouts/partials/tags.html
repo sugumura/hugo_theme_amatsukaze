@@ -1,9 +1,8 @@
 {{ if .Params.tags }}
   <div>
+    <ion-icon name="pricetags-outline"></ion-icon>
     {{ range .Params.tags }}
-      <span class="tags">
-        <a href="{{ $.Site.BaseURL }}/tags/{{ . | urlize }}/" title={{ . }}>#{{ . }}</a>
-      </span>
+      <a href="{{ $.Site.BaseURL }}/tags/{{ . | urlize }}/" title={{ . }}>#{{ . }}</a>
     {{ end }}
   </div>
 {{ end }}

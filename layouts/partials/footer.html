@@ -1,16 +1,6 @@
 <footer>
-  <p class="credits copyright">
-    <a href="{{ .Site.BaseURL }}about">{{ .Site.Author.name }}</a>
-    &nbsp;&copy;
-    {{ .Site.LastChange.Format "2006" }}
-
-    {{ if .Site.Title }}
-      &nbsp;/&nbsp;
-      <a href="{{ "" | absLangURL }}">{{ .Site.Title }}</a>
-    {{ end }}
-
-    <p class="credits theme-by">
-      Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;Theme <a href="https://github.com/sugumura/hugo_theme_amatsukaze">天津風(Amatsukaze)</a>
-    </p>
+  <p>{{ with .Site.Copyright }}{{ . | safeHTML }}{{ else }}<span class="h-logo">&copy; {{ .Site.Title }}</span>{{ end }}</p>
+  <p>
+    Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;Theme <a href="https://github.com/sugumura/hugo_theme_amatsukaze" title="天津風(Amatsukaze)" target="_blank">天津風(Amatsukaze)</a>
   </p>
 </footer>
