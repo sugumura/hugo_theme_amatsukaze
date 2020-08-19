@@ -1,5 +1,9 @@
 {{ define "title" }}{{ .Title }} - {{ end }}
-  
+
+{{ define "head_scripts" }}
+  {{ partial "blog_posting_json_ld.html" . }}
+{{ end }}
+
 {{ define "main" }}
 <main>
   <article>
@@ -24,6 +28,8 @@
     </button>
   {{ end }}
 
-  {{ template "_internal/disqus.html" . }}
+  {{ if eq .Type "post" }}
+    {{ template "_internal/disqus.html" . }}
+  {{ end }}
 </main>
 {{ end }}
