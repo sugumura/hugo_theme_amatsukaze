@@ -13,6 +13,8 @@ $ git submodule foreach git pull origin main
 
 ## Development
 
+- Node 12
+
 ```
 $ npm install
 $ npm run build
