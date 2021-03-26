@@ -23,18 +23,23 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
     <link rel="stylesheet" href="{{ .Site.BaseURL }}css/app.css">
 
+    {{ partial "google_analytics.html" . }}
+    {{ partial "google_tag_maanger_head.html" . }}
+
+
     <script type = "module" src = "//unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule = "" src = "//unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
     <script src="{{ .Site.BaseURL }}js/bundle.js"></script>
 
-    {{ partial "google_analytics.html" . }}
     {{ block "head_scripts" . }}{{ end }}
   </head>
   <body>
+    {{ partial "google_tag_maanger_body.html" . }}
+
     {{ partial "header.html" . }}
 
     {{ block "main" . }}{{ end }}
 
     {{ partial "footer.html" . }}
-    </body>
+  </body>
 </html>
