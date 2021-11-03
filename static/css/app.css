@@ -52,3 +52,8 @@ ion-icon {
 .post-title {
   line-height: 1.5em;
 }
+
+.buy-me-a-coffee {
+  margin: 1rem;
+  text-align: center;
+}

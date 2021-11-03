@@ -20,6 +20,10 @@
     {{ .Content }}
 
     {{ partial "tags.html" . }}
+
+    {{ if eq .Type "post" }}
+      {{ partial "buy_me_a_coffee.html" . }}
+    {{ end }}
   </article>
   {{ if and (gt .WordCount 400) (.Param "backtotop") }}
     {{ partial "backtotop.html" . }}
