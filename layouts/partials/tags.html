@@ -1,6 +1,6 @@
 {{ if .Params.tags }}
   <div>
-    <ion-icon name="pricetags-outline"></ion-icon>
+    <span>🏷️</span>
     {{ range .Params.tags }}
       <a href="{{ $.Site.BaseURL }}/tags/{{ . | urlize }}/" title={{ . }}>#{{ . }}</a>
     {{ end }}

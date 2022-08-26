@@ -1,6 +1,6 @@
 <div class="categories">
   {{ if .Params.categories }}
-    <ion-icon name="bookmarks-outline"></ion-icon>
+    <span>📑</span>
     {{ range .Params.categories }}
       <a href="{{ $.Site.BaseURL }}categories/{{ . | urlize }}/" title="{{ . }}">{{ . }}</a>&nbsp;
     {{ end }}
